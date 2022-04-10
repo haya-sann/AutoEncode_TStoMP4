@@ -56,7 +56,11 @@ Else
     fileNameToSave =  outputDirectory & "errorLog.txt" 
     confirmationMessage = dropedInputFilename & "の変換完了" &vbCrLf &vbCrLf & "mp4エンコードファイル保存先："  &  outputDirectory  &vbCrLf & "エラー記録は：" &fileNameToSave & "に保存します"
     MsgBox (confirmationMessage)
-    if InStr(outputFileName,"ニュース") > 0 then fso.MoveFile outputFileName,"\\READYSHARE\S_Drive\Video\ニュース\"
+    if InStr(outputFileName,"ニュース") > 0 or InStr(outputFileName,"クーパー360") > 0 then 
+      fso.MoveFile outputFileName,"\\LS410DX3DA\SharedDisk1\SharedFiles\ニュース\"
+    Else
+      fso.MoveFile outputFileName,"\\LS410DX3DA\SharedDisk1\SharedFiles\New\"
+    End If
     Dim ts
 
 '    Set ts = fso.OpenTextFile(fileNameToSave, 2, True)
