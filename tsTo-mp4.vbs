@@ -58,12 +58,16 @@ Else
     MsgBox (confirmationMessage)
     if InStr(outputFileName,"ニュース") > 0 or InStr(outputFileName,"クーパー360") > 0 then 
       fso.MoveFile outputFileName,"\\LS410DX3DA\SharedDisk1\SharedFiles\ニュース\"
-    Else
+      ElseIf InStr(outputFileName,"さんま") > 0 or InStr(outputFileName,"バラエティ") > 0  Then
+      fso.MoveFile outputFileName,"\\LS410DX3DA\SharedDisk1\SharedFiles\バラエティ\"
+      ElseIf InStr(outputFileName,"落語") > 0 or InStr(outputFileName,"笑点") > 0  Then
+      fso.MoveFile outputFileName,"\\LS410DX3DA\SharedDisk1\SharedFiles\落語・笑点\"
+      ElseIf InStr(outputFileName,"映画") > 0 or InStr(outputFileName,"シネマ") > 0  Then
+      fso.MoveFile outputFileName,"\\LS410DX3DA\SharedDisk1\SharedFiles\映画\"
+      Else
       fso.MoveFile outputFileName,"\\LS410DX3DA\SharedDisk1\SharedFiles\New\"
     End If
     Dim ts
-
-'    Set ts = fso.OpenTextFile(fileNameToSave, 2, True)
     Set ts = fso.CreateTextFile(fileNameToSave, 2, True)
 
     ts.Write( confirmationMessage &vbCrLf & szStr)
