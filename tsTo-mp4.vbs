@@ -53,7 +53,7 @@ Else
     CreateObject("WScript.Shell").Popup confirmationMessage, 5, "注意"
     ' エラーが起きなければ：この処理を書くべきでは？？
     fso.MoveFile dropedInputFilename,"E:\Media2-1\toBeTrash\"
-    CreateObject("WScript.Shell").Popup dropedInputFilename + "を削除しました", 5, "注意"
+    CreateObject("WScript.Shell").Popup dropedInputFilename + "を削除対象にしました", 5, "注意"
 
     if InStr(outputFileName,"ニュース") > 0 or InStr(outputFileName,"クーパー360") > 0 then 
       fso.MoveFile outputFileName,"\\LS410DX3DA\SharedDisk1\SharedFiles\ニュース\"
