@@ -22,7 +22,6 @@ outputFileName =  fso.GetFileName(WScript.Arguments.item(0))
 outputFileName =  outputDirectory & Left (outputFileName, InStrRev(outputFileName,".")) & "mp4" '拡張子をtsからmp4　に差し替え
 
 pt = InputBox ("ドラッグアンドドロップしたフルパスファイル名="  & dropedInputFilename & " からコマンド生成 ","mp4圧縮コマンド表示", "ffmpeg -y -i """ & dropedInputFilename & """ -vcodec h264_qsv -q 23 -look_ahead 0 -acodec aac -loglevel error """  & outputFileName & """" )
-
 If IsEmpty(pt) = true Then
     CreateObject("WScript.Shell").Popup "キャンセルされました", 5, "注意"
   pt = "cmd /c"
