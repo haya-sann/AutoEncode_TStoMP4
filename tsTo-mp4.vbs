@@ -50,7 +50,7 @@ Else
     fileNameToSave =  outputDirectory & "errorLog.txt" 
     confirmationMessage = dropedInputFilename & "の変換完了" &vbCrLf &vbCrLf & "mp4エンコードファイル保存先："  &  outputDirectory  &vbCrLf & "エラー記録は：" &fileNameToSave & "に保存します"
     CreateObject("WScript.Shell").Popup confirmationMessage, 5, "注意"
-    ' エラーが起きなければ：この処理を書くべきでは？？
+    ' エラーが起きなければ：元のtsファイルは削除候補に移動
     fso.MoveFile dropedInputFilename,"E:\Media2-1\toBeTrash\"
     CreateObject("WScript.Shell").Popup dropedInputFilename + "を削除対象にしました", 5, "注意"
 
@@ -64,6 +64,8 @@ Else
       fso.MoveFile outputFileName,"\\LS410DX3DA\SharedDisk1\SharedFiles\映画\"
       ElseIf InStr(outputFileName,"マープル") > 0 or InStr(outputFileName,"ポアロ") > 0 or InStr(outputFileName,"ミステリー") > 0  Then
       fso.MoveFile outputFileName,"\\LS410DX3DA\SharedDisk1\SharedFiles\ミステリー\"
+      ElseIf InStr(outputFileName,"音楽") > 0 or InStr(outputFileName,"ミュージック") > 0 or InStr(outputFileName,"Music") > 0  Then
+      fso.MoveFile outputFileName,"\\LS410DX3DA\SharedDisk1\SharedFiles\Music\"
       Else
       fso.MoveFile outputFileName,"\\LS410DX3DA\SharedDisk1\SharedFiles\New\"
     End If

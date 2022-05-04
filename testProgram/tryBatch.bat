@@ -1,5 +1,5 @@
 @echo off
-
+ECHO 現在実行中のファイル名→%~nx0 >> F:\MP4Encoded1\result.txt 2>>&1
 rem 変数「hensu」に文字列「井手ちゃんぽん」を代入
 set hensu=井手ちゃんぽん
 set resultFile=resultTest.txt 
@@ -7,7 +7,7 @@ set resultFile=resultTest.txt
 rem 変数「hensu」の中身を確認
 echo 変数「hensu」には「%hensu%」が代入されました。
 echo やっぱり%hensu%     はおいしいなあ。
-echo %DATE% %TIME%　に食べる%hensu%は格別だ
+echo %DATE%の %TIME%時間帯に食べる%hensu%は格別だ
 
 set FileName=朝のニュース　今日の天気
 echo ======================================== >> F:\MP4Encoded1\%resultFile% 2>>&1
