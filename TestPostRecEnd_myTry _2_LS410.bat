@@ -7,7 +7,7 @@ echo.   >> F:\MP4Encoded1\result.txt 2>>&1
 echo $FileName$ >> F:\MP4Encoded1\result.txt 2>>&1
 set encodedFile=F:\MP4Encoded1\$SDYYYY$$SDMM$$SDDD$$STHH$$STMM$$TitleF$.mp4
 echo ======================================== >> F:\MP4Encoded1\result.txt 2>>&1
-ffmpeg -y -i $FilePath$ -vcodec h264_qsv -q 23 -look_ahead 0 -acodec aac -loglevel error "%encodedFile%" >> F:\MP4Encoded1\result.txt 2>>&1
+ffmpeg -y -i "$FilePath$" -vcodec h264_qsv -q 23 -look_ahead 0 -acodec aac -loglevel error "%encodedFile%" >> F:\MP4Encoded1\result.txt 2>>&1
 echo エンコーディング終了 >> F:\MP4Encoded1\result.txt 2>>&1
 echo 元ファイル $FilePath$ を削除作業準備開始 >> F:\MP4Encoded1\result.txt 2>>&1
 move "$FilePath$" E:\Media2-1\toBeTrash   >> F:\MP4Encoded1\result.txt 2>>&1
