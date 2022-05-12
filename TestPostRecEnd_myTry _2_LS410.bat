@@ -1,4 +1,6 @@
  rem  h264_qsv を使ってエンコーディング
+echo ****************************************  >> F:\MP4Encoded1\result.txt 2>>&1
+echo.   >> F:\MP4Encoded1\result.txt 2>>&1
 ECHO %DATE% %TIME%  >> F:\MP4Encoded1\result.txt 2>>&1
 ECHO 現在実行中のファイル名→%~nx0 >> F:\MP4Encoded1\result.txt 2>>&1
 echo ========================================  >> F:\MP4Encoded1\result.txt 2>>&1
