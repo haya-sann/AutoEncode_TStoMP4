@@ -27,4 +27,3 @@ if not ERRORLEVEL 1 echo u%FileName%v‚ğˆÚ“®‚µ‚Ü‚µ‚½
 
 echo ======================================== >> F:\MP4Encoded1\%resultFile% 2>>&1
 pause
-
