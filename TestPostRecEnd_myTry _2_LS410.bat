@@ -15,6 +15,7 @@ echo 元ファイル $FilePath$ を削除作業準備開始 >> F:\MP4Encoded1\result.txt 2>>&1
 move "$FilePath$" E:\Media2-1\toBeTrash   >> F:\MP4Encoded1\result.txt 2>>&1
 echo $FileName$をLS410DX3DAのSharedFilesに移動  >> F:\MP4Encoded1\result.txt 2>>&1
 echo $FileName$ | findstr "ニュース 報道" >NUL
+
 if not ERRORLEVEL 1 (
     move "%encodedFile%" \\LS410DX3DA\SharedDisk1\SharedFiles\ニュース\  >> F:\MP4Encoded1\result.txt 2>>&1
 ) else (
