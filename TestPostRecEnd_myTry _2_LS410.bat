@@ -40,7 +40,7 @@ if not ERRORLEVEL 1 (
                         if not ERRORLEVEL 1 (
                             move "%encodedFile%" $ServerTarget$\programing\  >> F:\MP4Encoded1\result.txt 2>>&1
                         ) else (
-                            move "%encodedFile%" $ServerTarget$\–¢®—\  >> F:\MP4Encoded1\result.txt 2>>&1
+                            move "%encodedFile%" $ServerTarget$\New\  >> F:\MP4Encoded1\result.txt 2>>&1
 
                 )
             )
