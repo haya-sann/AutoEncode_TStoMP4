@@ -63,7 +63,7 @@ Else
       ElseIf InStr(outputFileName,"さんま") > 0 or InStr(outputFileName,"バラエティ") > 0  Then
       targetServer  = targetServer & "バラエティ\"
       ElseIf InStr(outputFileName,"落語") > 0 or InStr(outputFileName,"笑点") > 0  Then
-      targetServer  = targetServer & "落語・笑点\"
+      targetServer  = targetServer & "コメディ\落語・笑点\"
       ElseIf InStr(outputFileName,"映画") > 0 or InStr(outputFileName,"シネマ") > 0  Then
       targetServer  = targetServer & "映画\"
       ElseIf InStr(outputFileName,"マープル") > 0 or InStr(outputFileName,"ポアロ") > 0 or InStr(outputFileName,"ミステリー") > 0  Then

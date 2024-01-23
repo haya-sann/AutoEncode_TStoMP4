@@ -18,29 +18,29 @@ echo $FileName$ | findstr "ニュース 報道" >NUL
 set ServerTarget=\\NAS702258\video\ 
 rem 保存先のサーバーアドレス
 if not ERRORLEVEL 1 (
-    move "%encodedFile%" $ServerTarget$\ニュース\  >> F:\MP4Encoded1\result.txt 2>>&1
+    move "%encodedFile%" $ServerTarget$ニュース\  >> F:\MP4Encoded1\result.txt 2>>&1
 ) else (
     echo $FileName$ | findstr "笑点 落語" >NUL
     if not ERRORLEVEL 1 (
-        move "%encodedFile%" $ServerTarget$\コメディ\落語・笑点\  >> F:\MP4Encoded1\result.txt 2>>&1
+        move "%encodedFile%" $ServerTarget$コメディ\落語・笑点\  >> F:\MP4Encoded1\result.txt 2>>&1
         )  else (
             echo $FileName$ | findstr "料理 グルメ おいしい" >NUL
             if not ERRORLEVEL 1 (
-                move "%encodedFile%" $ServerTarget$\料理・グルメ\  >> F:\MP4Encoded1\result.txt 2>>&1
+                move "%encodedFile%" $ServerTarget$料理・グルメ\  >> F:\MP4Encoded1\result.txt 2>>&1
                 ) else (
                 echo $FileName$ | findstr "映画 シネマ ロードショー [映]" >NUL
                 if not ERRORLEVEL 1 (
-                    move "%encodedFile%" $ServerTarget$\映画\  >> F:\MP4Encoded1\result.txt 2>>&1
+                    move "%encodedFile%" $ServerTarget$映画\  >> F:\MP4Encoded1\result.txt 2>>&1
                     ) else (
                     echo $FileName$ | findstr "新婚さんいらっしゃい さんま" >NUL
                     if not ERRORLEVEL 1 (
-                        move "%encodedFile%" $ServerTarget$\バラエティ\  >> F:\MP4Encoded1\result.txt 2>>&1
+                        move "%encodedFile%" $ServerTarget$バラエティ\  >> F:\MP4Encoded1\result.txt 2>>&1
                     ) else (
                         echo $FileName$ | findstr "プログラミング" >NUL
                         if not ERRORLEVEL 1 (
-                            move "%encodedFile%" $ServerTarget$\programing\  >> F:\MP4Encoded1\result.txt 2>>&1
+                            move "%encodedFile%" $ServerTarget$programing\  >> F:\MP4Encoded1\result.txt 2>>&1
                         ) else (
-                            move "%encodedFile%" $ServerTarget$\New\  >> F:\MP4Encoded1\result.txt 2>>&1
+                            move "%encodedFile%" $ServerTarget$New\  >> F:\MP4Encoded1\result.txt 2>>&1
 
                 )
             )
