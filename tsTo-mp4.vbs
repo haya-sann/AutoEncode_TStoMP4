@@ -57,22 +57,23 @@ Else
     confirmationMessage = confirmationMessage &vbCrLf & dropedInputFilename & "を削除対象にしました"
 
     if InStr(outputFileName,"ニュース") > 0 or InStr(outputFileName,"クーパー360") > 0 then 
-      fso.MoveFile outputFileName,targetServer & "ニュース\"
+      targetServer  = targetServer & "ニュース\"
       ElseIf InStr(outputFileName,"さんま") > 0 or InStr(outputFileName,"バラエティ") > 0  Then
-      fso.MoveFile outputFileName,targetServer & "バラエティ\"
+      targetServer  = targetServer & "バラエティ\"
       ElseIf InStr(outputFileName,"落語") > 0 or InStr(outputFileName,"笑点") > 0  Then
-      fso.MoveFile outputFileName,targetServer & "落語・笑点\"
+      targetServer  = targetServer & "落語・笑点\"
       ElseIf InStr(outputFileName,"映画") > 0 or InStr(outputFileName,"シネマ") > 0  Then
-      fso.MoveFile outputFileName,targetServer & "映画\"
+      targetServer  = targetServer & "映画\"
       ElseIf InStr(outputFileName,"マープル") > 0 or InStr(outputFileName,"ポアロ") > 0 or InStr(outputFileName,"ミステリー") > 0  Then
-      fso.MoveFile outputFileName,targetServer & "ミステリー\"
+      targetServer  = targetServer & "ミステリー\"
       ElseIf InStr(outputFileName,"音楽") > 0 or InStr(outputFileName,"ミュージック") > 0 or InStr(outputFileName,"Music") > 0  Then
-      fso.MoveFile outputFileName,targetServer & "Music\"
+      targetServer  = targetServer & "Music\"
       ElseIf InStr(outputFileName,"料理") > 0 or InStr(outputFileName,"献立") > 0 or InStr(outputFileName,"台所") > 0  Then
-      fso.MoveFile outputFileName,targetServer & "料理・グルメ\"
+      targetServer  = targetServer & "料理・グルメ\"
       Else
-      fso.MoveFile outputFileName,targetServer & "New\"
+      targetServer  = targetServer & "New\"
     End If
+    fso.MoveFile outputFileName,targetServer
     CreateObject("WScript.Shell").Popup outputFileName + "をサーバーに移動して保存しました", 5, "注意"
     confirmationMessage = confirmationMessage &vbCrLf & outputFileName & "をサーバー" & targetServer &  "に移動して保存しました"
 
