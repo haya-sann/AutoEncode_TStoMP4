@@ -58,6 +58,8 @@ Else
 
     if InStr(outputFileName,"ニュース") > 0 or InStr(outputFileName,"クーパー360") > 0 then 
       targetServer  = targetServer & "ニュース\"
+      ElseIf InStr(outputFileName,"ドキュメンタリ") > 0 or InStr(outputFileName,"映像の世紀") > 0  Then
+      targetServer  = targetServer & "ドキュメンタリー\"
       ElseIf InStr(outputFileName,"さんま") > 0 or InStr(outputFileName,"バラエティ") > 0  Then
       targetServer  = targetServer & "バラエティ\"
       ElseIf InStr(outputFileName,"落語") > 0 or InStr(outputFileName,"笑点") > 0  Then
