@@ -79,6 +79,9 @@ Else
     CreateObject("WScript.Shell").Popup outputFileName + "をサーバーに移動して保存しました", 5, "注意"
     confirmationMessage = confirmationMessage &vbCrLf & outputFileName & "をサーバー" & targetServer &  "に移動して保存しました"
 
+Rem 以下のコードの説明を書いてください。
+
+
     Dim ts
     Set ts = fso.CreateTextFile(errorLogfileNameToSave, 2, True)
 
