@@ -11,7 +11,7 @@ If WScript.Arguments.Count > 0 Then
             ElseIf InStr(arg, "落語") > 0 Or InStr(arg, "笑点") > 0  Then
             targetServer  = targetServer & "落語・笑点\"
             ElseIf InStr(arg, "クラシック") > 0  Then
-            targetServer  = targetServer & "クラシック\"
+            targetServer  = targetServer & "Music\クラシック\"
             ElseIf InStr(arg, "さんま") > 0 Or InStr(arg, "バラエティ") > 0  Then
             targetServer  = targetServer & "バラエティ\"
             ElseIf InStr(arg, "クローズアップ現代") > 0  Then
@@ -26,19 +26,21 @@ If WScript.Arguments.Count > 0 Then
             targetServer  = targetServer & "ドキュメンタリー\映像の世紀\"
             ElseIf InStr(arg, "ワイルドライフ") > 0  Then
             targetServer  = targetServer & "ドキュメンタリー\WildLife\"
-            ElseIf InStr(arg, "ＢＢＣ　Ｅａｒｔｈ") > 0  Then
-            targetServer  = targetServer & "ドキュメンタリー\ＢＢＣ　Ｅａｒｔｈ\"
+            ElseIf InStr(arg, "ＢＢＣ　Ｅａｒｔｈ") > 0  Or InStr(arg, "プラネットアース") > 0 Then
+            targetServer  = targetServer & "ドキュメンタリー\Nature\"
             ElseIf InStr(arg, "ＮＨＫスペシャル") > 0  Then
             targetServer  = targetServer & "ドキュメンタリー\"
-            ElseIf InStr(arg, "プラネットアース") > 0  Then
-            targetServer  = targetServer & "ドキュメンタリー\Nature\"
             ElseIf InStr(arg, "１００カメ") > 0  Then
             targetServer  = targetServer & "ドキュメンタリー\100カメ\"
             ElseIf InStr(arg, "クラシック") > 0  Then
             targetServer  = targetServer & "Music\クラシック\"
             ElseIf InStr(arg, "料理") > 0 Or InStr(arg, "グルメ") > 0  Or InStr(arg, "献立") > 0  Then
             targetServer  = targetServer & "料理・グルメ\"
-            ElseIf InStr(arg, "ミステリー") > 0 Or InStr(arg, "ポアロ") > 0 Or InStr(arg, "アガサ・クリスティー") > 0  Then
+            ElseIf InStr(arg, "ポワロ") > 0 Then
+            targetServer  = targetServer & "ミステリー\ポワロ\"
+            ElseIf InStr(arg, "マープル") > 0  Then
+            targetServer  = targetServer & "ミステリー\マープル\"
+            ElseIf InStr(arg, "ミステリー") > 0 Then
             targetServer  = targetServer & "ミステリー\"
          Else
             targetServer  = targetServer & "New\"
@@ -46,11 +48,15 @@ If WScript.Arguments.Count > 0 Then
             Set fso = CreateObject("Scripting.FileSystemObject")
             Set f = fso.GetFile(arg)
             CreateObject("WScript.Shell").Popup f.Name + " moves to  " +  targetServer , 20, "注意" 'message, second, title
-
             f.Move targetServer & f.Name
-            'targetServerをクリアする
-            targetServer = "\\NAS702258\video\" '元に戻す
-
+            rem 結果とエラー発生状況をf.Nameのあるディレクトリー内のresult.txtに記録します
+            Set objFSO = CreateObject("Scripting.FileSystemObject")
+            Set objFile = objFSO.OpenTextFile(fso.GetParentFolderName(arg) & "\result.txt", 8, True)
+            objFile.WriteLine f.Name & " moves to  " &  targetServer & " at " & Now
+            objFile.Close
+                        
+            rem ここで、targetServerをクリアする
+            targetServer = "\\NAS702258\video\"
     Next
 End If
 ' END: ファイル名を取得して表示する

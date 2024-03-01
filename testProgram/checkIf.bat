@@ -9,3 +9,24 @@ echo ErrorLevelは %ERRORLEVEL% です
         echo 何もしません
 )
 
+set omestrings=%someStrings%
+echo %omestrings% | findstr "ニュース" >NUL
+if not ERRORLEVEL 1 (
+    echo "報道"
+) else (
+    echo %omestrings% | findstr "海 山 魚" >NUL
+    if not ERRORLEVEL 1 (
+        echo "自然"
+    ) else (
+        echo %omestrings% | findstr "さんま" >NUL
+        if not ERRORLEVEL 1 (
+            echo "バラエティ"
+        ) else (
+            echo %omestrings% | findstr "ポアロ" >NUL
+            if not ERRORLEVEL 1 (
+                echo "ミステリー"
+            )
+        )
+    )
+)
+
