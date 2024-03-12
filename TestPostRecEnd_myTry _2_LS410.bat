@@ -21,7 +21,7 @@ echo Line-20 移動させるファイルは %encodedFile% . Error Level は %ERRORLEVEL% : 
 
 
 if not ERRORLEVEL 1 (
-    rem ERRORLEVEL 1 はエラーはなかったという意味
+    rem not ERRORLEVEL 1 はエラーはなかった、つまり検索にヒットしたという意味
     echo Line-25 >> F:\MP4Encoded1\result.txt 2>>&1
     set ServerTarget="%ServerTarget%ニュース\"
     rem %ServerTarget%ニュース\ は無駄なスペースが入らないように”で囲んだ
@@ -82,8 +82,7 @@ if not ERRORLEVEL 1 (
                                     set ServerTarget="%ServerTarget%New\"
                                     )))))
                                     echo Line-67 もうチェックする項目はありません >> F:\MP4Encoded1\result.txt 2>>&1
-    )
-)
+    ))))))
 move "%encodedFile%" "%ServerTarget%"  >> F:\MP4Encoded1\result.txt 2>>&1
 echo Line-67, $FileName$をQNAPサーバーの%ServerTarget%フォルダに移動完了。  >> F:\MP4Encoded1\result.txt 2>>&1
 echo ======================================== >> F:\MP4Encoded1\result.txt 2>>&1
